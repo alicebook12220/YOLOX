@@ -1,7 +1,4 @@
 # TODO: Update with exact module version
-torch==1.7.1+cu110
-torchvision==0.8.2+cu110
-torchaudio==0.7.2
 numpy
 opencv_python
 loguru
