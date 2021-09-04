@@ -3,6 +3,7 @@ import os
 
 import torch
 import torch.distributed as dist
+import torch.nn as nn
 
 from yolox.data import get_yolox_datadir
 from yolox.exp import Exp as MyExp
