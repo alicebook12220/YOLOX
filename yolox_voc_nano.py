@@ -8,20 +8,9 @@ import torch.nn as nn
 from yolox.data import get_yolox_datadir
 from yolox.exp import Exp as MyExp
 
-self.depth = 0.33
-self.width = 0.25
-self.input_size = (416, 416)
-self.random_size = (10, 20)
-self.mosaic_scale = (0.5, 1.5)
-self.test_size = (416, 416)
-self.mosaic_prob = 0.5
-self.enable_mixup = False
-self.exp_name = os.path.split(os.path.realpath(__file__))[1].split(".")[0]
-
 class Exp(MyExp):
     def __init__(self):
         super(Exp, self).__init__()
-        self.data_num_workers = 0
         self.num_classes = 1 #類別數量
         self.depth = 0.33
         self.width = 0.25
@@ -32,7 +21,7 @@ class Exp(MyExp):
         self.mosaic_prob = 0.5 #數據增強
         self.enable_mixup = False
         self.data_num_workers = 0 #是否提前讀取batch data，值越大load速度越快，但會增加CPU負擔
-        self.warmup_epochs = 1
+        self.warmup_epochs = 1 #暖身訓練，先用比較小的學習率訓練回合數
         self.max_epoch = 20 #訓練回合數
         self.eval_interval = 2 #每經過幾回合後評估
 
